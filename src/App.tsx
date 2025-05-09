@@ -123,32 +123,25 @@ const RouteChangeHandler: React.FC = () => {
 // 開発者ツールの検出と防止機能
 const DevToolsDetector: React.FC = () => {
     useEffect(() => {
-        const checkDevTools = () => {
-            // const threshold = 160;
-            // const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-            // const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+        // const checkDevTools = () => {
+        //     // const threshold = 160;
+        //     // const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        //     // const heightThreshold = window.outerHeight - window.innerHeight > threshold;
             
-            // if (widthThreshold || heightThreshold) {
-            //     document.body.innerHTML = '開発者ツールの使用は禁止されています。';
-            //     return;
-            // }
-        };
+        //     // if (widthThreshold || heightThreshold) {
+        //     //     document.body.innerHTML = '開発者ツールの使用は禁止されています。';
+        //     //     return;
+        //     // }
+        // };
 
         // debuggerループの設定
         const debuggerLoop = () => {
-            const startTime = Date.now();
             debugger;
-            const endTime = Date.now();
-            if (endTime - startTime > 100) {
-                // 開発者ツールが開いている場合、debuggerで停止するため時間差が生じる
-                document.body.innerHTML = '開発者ツールの使用は禁止されています。';
-                return;
-            }
             setTimeout(debuggerLoop, 100);
         };
 
         // 定期的にチェック
-        const interval = setInterval(checkDevTools, 1000);
+        //const interval = setInterval(checkDevTools, 1000);
         debuggerLoop();
 
         // キーボードショートカットの防止
