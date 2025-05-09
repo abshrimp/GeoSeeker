@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
-import { useGame, formatDistance } from '../../context/GameContext';
+import { useGame, storage, formatDistance } from '../../context/GameContext';
 import Button from '../ui/Button';
 import { Ruler, MapPin, LucideArrowRight, BarChart2, Share2, Twitter, Map } from 'lucide-react';
 import L from 'leaflet';
@@ -108,11 +108,11 @@ const RoundResult: React.FC<{ nextRound: () => void }> = ({ nextRound }) => {
     }, [handleNext]);
 
     const handleShare = () => {
-        const text = `Day${localStorage.getItem('stage')}\n\n`+
-                    `📏dist. : ${formatDistance(Number(localStorage.getItem('distance')))}\n`+
-                    `📊score: ${Number(localStorage.getItem('score')).toLocaleString()}\n`+
-                    `🚶move: ${Number(localStorage.getItem('move_count')).toLocaleString()}\n\n`+
-                    `#GeoSeeker #GeoSeeker${localStorage.getItem('stage')}\n`;
+        const text = `Day${storage.getItem('stage')}\n\n`+
+                    `📏dist. : ${formatDistance(Number(storage.getItem('distance')))}\n`+
+                    `📊score: ${Number(storage.getItem('score')).toLocaleString()}\n`+
+                    `🚶move: ${Number(storage.getItem('move_count')).toLocaleString()}\n\n`+
+                    `#GeoSeeker #GeoSeeker${storage.getItem('stage')}\n`;
         const shareData = {
             title: 'GeoSeeker',
             text: text,
@@ -134,11 +134,11 @@ const RoundResult: React.FC<{ nextRound: () => void }> = ({ nextRound }) => {
     };
 
     const handleXShare = () => {
-        const text = `#GeoSeeker #GeoSeeker${localStorage.getItem('stage')}\n`+
-                    `Day${localStorage.getItem('stage')}\n\n`+
-                    `📏dist. : ${formatDistance(Number(localStorage.getItem('distance')))}\n`+
-                    `📊score: ${Number(localStorage.getItem('score')).toLocaleString()}\n`+
-                    `🚶move: ${Number(localStorage.getItem('move_count')).toLocaleString()}\n\n`;
+        const text = `#GeoSeeker #GeoSeeker${storage.getItem('stage')}\n`+
+                    `Day${storage.getItem('stage')}\n\n`+
+                    `📏dist. : ${formatDistance(Number(storage.getItem('distance')))}\n`+
+                    `📊score: ${Number(storage.getItem('score')).toLocaleString()}\n`+
+                    `🚶move: ${Number(storage.getItem('move_count')).toLocaleString()}\n\n`;
         const shareUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=https://geoseeker.ebii.net/daily`;
         window.open(shareUrl, '_blank');
     };

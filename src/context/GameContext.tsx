@@ -72,6 +72,28 @@ export const formatTime = (seconds: number) => {
     }
 };
 
+export const storage = {
+    getItem: (key: string): string | null => {
+        try {
+            return localStorage.getItem(key) || sessionStorage.getItem(key);
+        } catch (error) {
+            console.warn('ストレージへのアクセスが制限されています:', error);
+            return null;
+        }
+    },
+    setItem: (key: string, value: string): void => {
+        try {
+            localStorage.setItem(key, value);
+        } catch (error) {
+            try {
+                sessionStorage.setItem(key, value);
+            } catch (e) {
+                console.warn('ストレージへのアクセスが制限されています:', e);
+            }
+        }
+    }
+};
+
 export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [gameState, _setGameState] = useState<Game>({
         game_id: 0,

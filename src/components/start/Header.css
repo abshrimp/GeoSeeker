@@ -24,7 +24,7 @@
 .startscreen-header-logo {
     display: flex;
     align-items: center;
-    padding-left: 1rem;
+    padding-left: 0.7rem;
 }
 
 .startscreen-header-logoicon {

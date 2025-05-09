@@ -5,7 +5,7 @@ import GuessIcon from '../../assets/images/guess.svg';
 import L, { Map as LeafletMap, Marker } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './Map.css';
-import { useGame } from '../../context/GameContext';
+import { useGame, storage } from '../../context/GameContext';
 
 interface MapProps {
     onGuess: () => void;
@@ -123,8 +123,8 @@ const Map: React.FC<MapProps> = ({ onGuess, edges }) => {
             });
 
             if (!appState.isPlaying) {
-                localStorage.setItem('guess_lat', String(latlng.lat));
-                localStorage.setItem('guess_lng', String(lng));
+                storage.setItem('guess_lat', String(latlng.lat));
+                storage.setItem('guess_lng', String(lng));
             }
         }
     };
@@ -158,8 +158,8 @@ const Map: React.FC<MapProps> = ({ onGuess, edges }) => {
         };
 
         const stopResize = (e: MouseEvent) => {
-            localStorage.setItem('width', String(startWidth - e.clientX + startX));
-            localStorage.setItem('height', String(startHeight - e.clientY + startY));
+            storage.setItem('width', String(startWidth - e.clientX + startX));
+            storage.setItem('height', String(startHeight - e.clientY + startY));
             if (streetView) {
                 streetView.className = streetView.className.replace(' street-view-stop', '');
             }
@@ -173,11 +173,11 @@ const Map: React.FC<MapProps> = ({ onGuess, edges }) => {
             resizerElement.addEventListener('mousedown', initResize, false);
         }
 
-        const resizeWidth = localStorage.getItem('width');
+        const resizeWidth = storage.getItem('width');
         if (resizeWidth) {
             setCanvasStyle({
                 '--map-width': `${resizeWidth}px`,
-                '--map-height': `${localStorage.getItem('height') || '0'}px`,
+                '--map-height': `${storage.getItem('height') || '0'}px`,
             } as React.CSSProperties);
         }
     };

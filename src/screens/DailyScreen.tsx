@@ -4,7 +4,7 @@ import { useState } from "react";
 import Loading from "../components/play/Loading2";
 import SEO from "../components/SEO";
 import GameScreen from "./GameScreen";
-import { useGame } from "../context/GameContext";
+import { useGame, storage } from "../context/GameContext";
 import { apiClient } from "../api/client";
 
 const DailyScreen: React.FC = () => {
@@ -25,24 +25,24 @@ const DailyScreen: React.FC = () => {
                         guess_lng = null,
                         score = null,
                         distance = null;
-                    if (localStorage.getItem('stage') == response.num) {
-                        total_score = Number(localStorage.getItem('move_count'));
-                        guess_lat = Number(localStorage.getItem('guess_lat'));
-                        guess_lng = Number(localStorage.getItem('guess_lng'));
-                        score = Number(localStorage.getItem('score'));
-                        distance = Number(localStorage.getItem('distance'));
+                    if (storage.getItem('stage') == response.num) {
+                        total_score = Number(storage.getItem('move_count'));
+                        guess_lat = Number(storage.getItem('guess_lat'));
+                        guess_lng = Number(storage.getItem('guess_lng'));
+                        score = Number(storage.getItem('score'));
+                        distance = Number(storage.getItem('distance'));
                         if (score > 0) {
                             setAppState({
                                 isShowRoundResult: true,
                             });
                         }
                     } else {
-                        localStorage.setItem('stage', response.num);
-                        localStorage.setItem('move_count', '0');
-                        localStorage.setItem('guess_lat', '');
-                        localStorage.setItem('guess_lng', '');
-                        localStorage.setItem('score', '');
-                        localStorage.setItem('distance', '');
+                        storage.setItem('stage', response.num);
+                        storage.setItem('move_count', '0');
+                        storage.setItem('guess_lat', '');
+                        storage.setItem('guess_lng', '');
+                        storage.setItem('score', '');
+                        storage.setItem('distance', '');
                     }
                     setGameState({
                         game_id: 0,

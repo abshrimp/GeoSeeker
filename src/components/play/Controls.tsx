@@ -5,7 +5,7 @@ import GoBack from './Controls/GoBack';
 import GoStart from './Controls/GoStart';
 import Checkpoint from './Controls/Checkpoint';
 import RotatingCompass from './Controls/RotatingCompass';
-import { useGame } from '../../context/GameContext';
+import { useGame, storage } from '../../context/GameContext';
 
 interface Position {
     lat: number;
@@ -57,7 +57,7 @@ const Controls: React.FC<ControlsProps> = ({ panorama, degree, setDegree }) => {
         if (currentPov && currentPos) {
             if (!appState.isPlaying) {
                 countRef.current++;
-                localStorage.setItem('move_count', String(countRef.current));
+                storage.setItem('move_count', String(countRef.current));
             }
             setBackFlag((flag) => {     // back系の関数のsetPositionによる発火（flag = true）なら無視
                 if (!flag) setPos([currentPos.toJSON(), currentPov.heading, currentPov.pitch]);

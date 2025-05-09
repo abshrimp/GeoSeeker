@@ -8,7 +8,7 @@ import Map from '../components/play/Map';
 import Loading from '../components/play/Loading';
 import RoundResult from '../components/play/RoundResult';
 import './GameScreen.css';
-import { useGame } from '../context/GameContext';
+import { useGame, storage } from '../context/GameContext';
 import { apiClient } from "../api/client.ts";
 import { getDistance } from 'geolib';
 
@@ -57,8 +57,8 @@ const GameScreen: React.FC = () => {
         setGameState(updatedGameState);
 
         if (!appState.isPlaying) {
-            localStorage.setItem('score', String(score2));
-            localStorage.setItem('distance', String(distance));
+            storage.setItem('score', String(score2));
+            storage.setItem('distance', String(distance));
         }
 
         if (appState.isAuthenticated && appState.isPlaying) {

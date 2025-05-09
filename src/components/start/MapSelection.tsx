@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useGame } from '../../context/GameContext';
+import { useGame, storage } from '../../context/GameContext';
 import Dropdown from '../ui/Dropdown';
 import { Globe, MapPin, Award } from 'lucide-react';
 import citiesData from '../../data/cities.json';
@@ -28,15 +28,15 @@ const MapSelection: React.FC<MapSelectionProps> = ({ stats }) => {
     const { gameState, setGameState } = useGame();
 
     const [selectedPrefecture, setSelectedPrefecture] = useState(() => {
-        const saved = localStorage.getItem('selectedPrefecture');
+        const saved = storage.getItem('selectedPrefecture');
         return saved || '';
     });
     const [selectedCity, setSelectedCity] = useState(() => {
-        const saved = localStorage.getItem('selectedCity');
+        const saved = storage.getItem('selectedCity');
         return saved || '';
     });
     const [selectedDistrict, setSelectedDistrict] = useState(() => {
-        const saved = localStorage.getItem('selectedDistrict');
+        const saved = storage.getItem('selectedDistrict');
         return saved || '';
     });
 
@@ -45,7 +45,7 @@ const MapSelection: React.FC<MapSelectionProps> = ({ stats }) => {
         if (!selectedPrefecture) {
             const defaultPref = Object.keys(cities)[0];
             setSelectedPrefecture(defaultPref);
-            localStorage.setItem('selectedPrefecture', defaultPref);
+            storage.setItem('selectedPrefecture', defaultPref);
         }
     }, []);
 
@@ -54,7 +54,7 @@ const MapSelection: React.FC<MapSelectionProps> = ({ stats }) => {
         const pref = cities[selectedPrefecture];
         if (typeof pref === 'object') {
             const cityList = Object.keys(pref);
-            const savedCity = localStorage.getItem('selectedCity');
+            const savedCity = storage.getItem('selectedCity');
             const validCity = savedCity && cityList.includes(savedCity) ? savedCity : cityList[0] || '';
             setSelectedCity(validCity);
         } else if (typeof pref === 'number') {
@@ -69,12 +69,12 @@ const MapSelection: React.FC<MapSelectionProps> = ({ stats }) => {
 
     // 市区町村の変更を監視
     useEffect(() => {
-        localStorage.setItem('selectedCity', selectedCity);
+        storage.setItem('selectedCity', selectedCity);
         
         const city = cities[selectedPrefecture]?.[selectedCity];
         if (typeof city === 'object') {
             const wardList = Object.keys(city);
-            const savedDistrict = localStorage.getItem('selectedDistrict');
+            const savedDistrict = storage.getItem('selectedDistrict');
             const validDistrict = savedDistrict && wardList.includes(savedDistrict) ? savedDistrict : wardList[0] || '';
             setSelectedDistrict(validDistrict);
         } else if (typeof city === 'number') {
@@ -88,7 +88,7 @@ const MapSelection: React.FC<MapSelectionProps> = ({ stats }) => {
 
     // 区の変更を監視
     useEffect(() => {
-        localStorage.setItem('selectedDistrict', selectedDistrict);
+        storage.setItem('selectedDistrict', selectedDistrict);
         
         const city = cities[selectedPrefecture]?.[selectedCity];
         if (typeof city === 'object' && selectedDistrict) {
@@ -117,7 +117,7 @@ const MapSelection: React.FC<MapSelectionProps> = ({ stats }) => {
 
     const handlePrefectureChange = (value: string) => {
         setSelectedPrefecture(value);
-        localStorage.setItem('selectedPrefecture', value);
+        storage.setItem('selectedPrefecture', value);
     };
 
     const handleCityChange = (value: string) => {
