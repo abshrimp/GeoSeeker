@@ -88,7 +88,7 @@ const Leaderboard: React.FC<LeaderboardProps> = ({ setStats }) => {
             ) : (
                 <>
                     <div className="entries">
-                        {records[activeTab].slice(0, 5).map((entry, index) => (
+                        {records[activeTab].map((entry, index) => (
                             <div key={entry.game_id} className="entry">
                                 <div className="entry-content">
                                     <div className="entry-left">
