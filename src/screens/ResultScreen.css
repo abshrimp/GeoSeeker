@@ -1,0 +1,33 @@
+.results-page {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: #f3f4f6;
+}
+
+.main-content {
+    margin: 0 auto;
+    height: 100vh;
+    height: 100dvh;
+}
+
+.resultscreen-maparea {
+    width: 100%;
+    flex: 1 1 0%;
+    height: 30vh;
+    height: 30dvh;
+}
+
+@media (min-width: 685px) {
+    .main-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .resultscreen-maparea {
+        height: auto;
+    }
+}
+
+.resultscreen-map {
+    height: 100%;
+}

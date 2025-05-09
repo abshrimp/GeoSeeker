@@ -1,0 +1,141 @@
+.startscreen-header {
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.startscreen-header-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.startscreen-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.startscreen-header-logo {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.startscreen-header-logoicon {
+    height: 2.5rem;
+    color: #10b981;
+}
+
+.startscreen-header-title {
+    margin-left: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #111827;
+}
+
+.startscreen-header-userarea {
+    position: relative;
+}
+
+.startscreen-user-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    transition: background 0.15s;
+}
+
+.startscreen-user-btn:hover {
+    background: #f3f4f6;
+}
+
+.startscreen-user-avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    background: #dbeafe;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.startscreen-user-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.startscreen-user-chevron {
+    width: 1rem;
+    height: 1rem;
+    color: #6b7280;
+}
+
+.startscreen-user-menu {
+    position: absolute;
+    right: 0;
+    margin-top: 0.5rem;
+    width: 12rem;
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+    padding: 0.5rem 0;
+    z-index: 10;
+}
+
+.startscreen-user-menuitem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    color: #374151;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.startscreen-user-menuitem:hover {
+    background: #f3f4f6;
+}
+
+.startscreen-user-menuitem-logout {
+    color: #ef4444;
+}
+
+.startscreen-user-menuitem-signup {
+    color: #17940e;
+}
+
+.startscreen-user-menuitem-login {
+    gap: 0.7rem;
+    padding-left: 0.85rem;
+}
+
+.startscreen-user-menuicon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.startscreen-user-menuitem-daily {
+    gap: 0.6rem;
+    padding-left: 0.95rem;
+}
+
+.startscreen-user-menuitem-how-to {
+    gap: 0.6rem;
+    padding-left: 0.95rem;
+}

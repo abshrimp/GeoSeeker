@@ -1,0 +1,48 @@
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000000e0;
+    z-index: 1100;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: wait;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.loading div {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loadingIcon {
+    width: 15vh;
+    width: 15dvw;
+    height: 15vh;
+    height: 15dvh;
+    animation: spin 1.5s linear infinite;
+}
+
+.loadingIcon2 {
+    width: 15vh;
+    width: 15dvw;
+    height: 15vh;
+    height: 15dvh;
+}

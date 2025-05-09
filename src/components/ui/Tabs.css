@@ -1,0 +1,36 @@
+.tabs-root {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tabs-nav {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: -1px;
+}
+
+.tabs-btn {
+    white-space: nowrap;
+    padding: 1rem 0.25rem;
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #6b7280;
+    background: none;
+    transition: color 0.2s, border-color 0.2s;
+    cursor: pointer;
+}
+
+.tabs-btn:hover {
+    color: #374151;
+    border-bottom: 2px solid #d1d5db;
+}
+
+.tabs-btn-active {
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+}
+
+.tabs-btn-active:hover {
+    color: #094cdb;
+    border-bottom: 2px solid #094cdb;
+}

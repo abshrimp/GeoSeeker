@@ -1,0 +1,99 @@
+.controls {
+    bottom: 3rem;
+    position: absolute;
+}
+
+@media only screen and (min-width: 680px) {
+    .controls {
+        left: 1.5rem;
+    }
+}
+
+.controls button {
+    --size: 2.5rem;
+    --padding: 0.5rem;
+}
+
+.controls button:hover {
+    background: rgba(0, 0, 0, .8)
+}
+
+.control-grid {
+    display: grid;
+    grid-template-areas:
+        "left right"
+        "bottom bottom";
+    align-items: end;
+}
+
+.control-grid-disable-zoom {
+    grid-template-areas: none;
+}
+
+.control-column div {
+    margin-bottom: 1rem;
+}
+
+.control-column-right {
+    margin-left: .6rem;
+    text-align: center;
+}
+
+.control-column-left {
+    margin-left: 1rem;
+}
+
+.control-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.button-small {
+    background: rgba(0, 0, 0, .6);
+    border-bottom: .0625rem solid rgba(0, 0, 0, .4);
+    cursor: pointer;
+    height: var(--size);
+    padding: var(--padding);
+}
+
+.button-round-both {
+    border-radius: 100%;
+}
+
+.button-round-top {
+    padding-top: 0.7rem;
+    border-top-left-radius: calc((var(--size) + .5rem) / 2);
+    border-top-right-radius: calc((var(--size) + .5rem) / 2);
+    height: calc(var(--size) + .5rem);
+}
+
+.button-round-bottom {
+    padding-top: 0.7rem;
+    border-bottom-left-radius: calc((var(--size) + .5rem) / 2);
+    border-bottom-right-radius: calc((var(--size) + .5rem) / 2);
+    height: calc(var(--size) + .5rem);
+}
+
+img.icon {
+    width: 1.5rem;
+    height: auto;
+}
+
+.button-disabled {
+    cursor: not-allowed !important;
+    opacity: .4;
+}
+
+@media only screen and (max-width: 679px) {
+    .control-column-right {
+        display: none;
+    }
+}
+
+.control-zoom-display {
+    display: flex;
+}
+
+.rotating-compass {
+    margin-bottom: 1rem;
+}

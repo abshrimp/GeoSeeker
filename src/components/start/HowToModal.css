@@ -1,0 +1,212 @@
+.how-to-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.how-to-modal {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 32rem;
+    margin: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.how-to-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #9ca3af;
+    transition: color 0.2s;
+    z-index: 10;
+}
+
+.how-to-modal-close:hover {
+    color: #4b5563;
+}
+
+.how-to-modal h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    margin: 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.how-to-content {
+    padding: 1.5rem;
+    max-height: calc(80vh - 5rem);
+    max-height: calc(80dvh - 5rem);
+    overflow-y: auto;
+}
+
+.how-to-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #374151;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.how-to-content h3:first-child {
+    margin-top: 0;
+}
+
+.how-to-content ol,
+.how-to-content ul {
+    padding-left: 1.5rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.how-to-content li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+.how-to-content li:last-child {
+    margin-bottom: 0;
+}
+
+.how-to-content strong {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* スクロールバーのスタイリング */
+.how-to-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.how-to-content::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.how-to-content::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.how-to-content::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.terms-section {
+    margin-top: 1rem;
+}
+
+.terms-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.terms-toggle h3 {
+    margin: 0;
+}
+
+.terms-toggle:hover {
+    opacity: 0.8;
+}
+
+.terms-content {
+    padding: 1rem 0;
+}
+
+.terms-intro {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+.terms-section {
+    margin-bottom: 1.5rem;
+}
+
+.terms-section:last-child {
+    margin-bottom: 0;
+}
+
+.terms-section h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+
+.terms-section p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+.terms-section ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.terms-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+.terms-section li:last-child {
+    margin-bottom: 0;
+}
+
+.terms-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.terms-contact {
+    margin-bottom: 1rem;
+}
+
+.terms-contact h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.terms-contact a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.terms-contact a:hover {
+    text-decoration: underline;
+}
+
+.terms-version {
+    margin-bottom: 0.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.terms-copyright {
+    color: #6b7280;
+    font-size: 0.875rem;
+} 

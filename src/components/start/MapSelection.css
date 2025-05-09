@@ -1,0 +1,77 @@
+.map-selection {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.map-selection-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.map-selection-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.globe-icon {
+    width: 20px;
+    height: 20px;
+    color: #3b82f6;
+    margin-right: 8px;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .dropdown-container {
+        flex-direction: row;
+    }
+}
+
+.dropdown-item {
+    flex: 1;
+}
+
+.map-info {
+    margin-top: 16px;
+}
+
+.map-description {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.map-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+}
+
+.map-pin-icon {
+    width: 16px;
+    height: 16px;
+    color: #10b981;
+    margin-right: 4px;
+}
+
+.award-icon {
+    width: 16px;
+    height: 16px;
+    color: #f59e0b;
+    margin-right: 4px;
+}

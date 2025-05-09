@@ -1,0 +1,36 @@
+.clock-container {
+    top: 4rem;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    --timer-width: 2rem;
+}
+
+.timer-container {
+    width: calc(var(--timer-width) * 2.5);
+}
+
+.timer {
+    align-items: center;
+    color: var(--ds-color-white);
+    background: rgba(26, 26, 46, .8);
+    border-radius: calc(var(--timer-width) / 2);
+    display: flex;
+    font-weight: 700;
+    height: var(--timer-width);
+    justify-content: center;
+}
+
+.timer-svg {
+    position: absolute;
+    top: 0;
+}
+
+@media only screen and (max-width: 679px) {
+    .clock-container {
+        top: .5rem;
+        left: .5rem;
+        transform: scale(.9);
+        z-index: 1000;
+    }
+}

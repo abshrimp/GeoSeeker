@@ -1,0 +1,236 @@
+.map-container {
+    bottom: 1rem;
+    display: flex;
+    position: absolute;
+    --edge-spacing: 1rem;
+    right: 0;
+}
+
+.guess-map {
+    --map-transition: .3s;
+    --map-width: 30rem;
+    --map-height: 20rem;
+    position: relative;
+    opacity: .5;
+    transition: var(--map-transition);
+    right: var(--edge-spacing);
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.guess-map:hover,
+.guess-map-hover {
+    opacity: 1;
+}
+
+.guess-map-canvas {
+    background-color: #fff;
+    width: 15rem;
+    height: 10rem;
+    transition: .3s;
+    position: relative;
+    transition-delay: .3s;
+    cursor: crosshair;
+}
+
+.leaflet-marker-icon {
+    cursor: crosshair !important;
+}
+
+.guess-map:hover .guess-map-canvas,
+.guess-map-hover .guess-map-canvas,
+.guess-map-canvas-resize .guess-map-canvas {
+    width: clamp(15rem, var(--map-width), calc(100vw - 2rem));
+    height: clamp(10rem, var(--map-height), calc(100vh - 10rem));
+    height: clamp(10rem, var(--map-height), calc(100dvh - 10rem));
+    transition-delay: 0s;
+}
+
+.guess-map-canvas-resize .guess-map-canvas {
+    transition: .0s;
+    pointer-events: none;
+}
+
+.guess-button {
+    --guess-color: rgba(0, 0, 0, .6);
+    --guess-hover: rgba(0, 0, 0, .8);
+    background: var(--guess-color);
+    color: var(--ds-color-white);
+    font-weight: 700;
+    width: 100%;
+    height: 2rem;
+    margin: 0.4rem 0;
+    text-align: center;
+    overflow-wrap: anywhere;
+    border-radius: 1rem;
+    cursor: not-allowed;
+    position: relative;
+    z-index: 1000;
+    transition: .15s;
+}
+
+.guess-allowed {
+    --guess-color: var(--ds-color-green-60);
+    --guess-hover: var(--ds-color-green-80);
+    cursor: pointer;
+}
+
+.guess-button:hover {
+    background: var(--guess-hover);
+}
+
+.guess-map_toggle {
+    display: none;
+}
+
+.guess-map_toggle button {
+    align-items: center;
+    background: var(--ds-color-green-80);
+    border: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 .125rem var(--ds-color-white-20), inset 0 0 0 .375rem var(--ds-color-green-80), inset 0 0 0 .5rem var(--ds-color-white-20), 0 0 0 .25rem var(--ds-color-white-20);
+    display: flex;
+    height: 3.5rem;
+    justify-content: center;
+    width: 3.5rem;
+    position: relative;
+    right: var(--edge-spacing);
+    z-index: 1000;
+}
+
+.resizer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-top: 2rem solid var(--ds-color-black-50);
+    border-right: 2rem solid transparent;
+    cursor: nwse-resize;
+    z-index: 1000;
+    display: none;
+}
+
+.resizer::before,
+.resizer::after {
+    content: '';
+    position: absolute;
+    height: .05rem;
+    background-color: var(--ds-color-white-80);
+}
+
+.resizer::before {
+    left: .1rem;
+    bottom: .7rem;
+    width: 1.68rem;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+}
+
+.resizer::after {
+    left: .1rem;
+    bottom: 1.2rem;
+    width: .98rem;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+}
+
+.guess-map:hover .resizer,
+.guess-map-hover .resizer,
+.guess-map-canvas-resize .resizer {
+    display: block;
+}
+
+.pinner {
+    padding: 0;
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 100%;
+    position: absolute;
+    top: .6rem;
+    background-color: var(--ds-color-black-50);
+    z-index: 1001;
+    left: 2.3rem;
+    display: none;
+    cursor: pointer;
+    transition: .2s ease;
+    transform: rotate(90deg);
+}
+
+.pinner-img {
+    position: relative;
+    top: .02rem;
+    left: .02rem;
+    height: 1.1rem;
+    width: 1.1rem;
+}
+
+.guess-map:hover .pinner,
+.guess-map-hover .pinner,
+.guess-map-canvas-resize .pinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pinner-pin {
+    transform: rotate(0deg) scale(0.95);
+    background-color: #000;
+}
+
+@media only screen and (min-width: 679px) {
+    .map-container {
+        --edge-spacing: 1rem;
+    }
+}
+
+@media only screen and (max-width: 679px) {
+    .map-container {
+        bottom: 0;
+        background-color: #fff;
+        height: 100vh;
+        height: 100dvh;
+    }
+
+    .guess-map_toggle {
+        bottom: 2rem;
+        display: block;
+        position: absolute;
+        right: 0;
+    }
+
+    .guess-map {
+        right: 0;
+        width: 100vw;
+        opacity: 1;
+    }
+
+    .guess-map-canvas {
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+    }
+
+    .guess-button {
+        width: 50vw;
+        position: absolute;
+        transform: translateX(25vw);
+        bottom: 1rem;
+        left: 0;
+        height: 3rem;
+        border-radius: 1.5rem;
+        box-shadow: inset 0 0 0 .125rem var(--ds-color-white-20), inset 0 0 0 .5rem var(--ds-color-white-20);
+    }
+
+    .resizer,
+    .pinner {
+        display: none !important;
+    }
+
+    .guess-map:hover .guess-map-canvas {
+        width: 100%;
+        height: 100%;
+    }
+
+    .guess-map-hidden {
+        display: none;
+    }
+}

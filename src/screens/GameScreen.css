@@ -1,0 +1,13 @@
+/* App.css */
+.panorama-layout {
+    display: flex;
+    height: 100%;
+}
+
+.panorama-main {
+    flex: 1 1 auto;
+}
+
+:root {
+    --compass-width: min(40vw, 20rem);
+}

@@ -1,0 +1,115 @@
+.button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    border-radius: 0.5rem;
+    outline: none;
+    border: none;
+    position: relative;
+}
+
+.button-primary {
+    background: #2563eb;
+    color: #fff;
+}
+
+.button-primary:hover {
+    background: #1d4ed8;
+}
+
+.button-secondary {
+    background: #10b981;
+    color: #fff;
+}
+
+.button-secondary:hover {
+    background: #059669;
+}
+
+.button-outline {
+    border: 1px solid #d1d5db;
+    background: transparent;
+    color: #374151;
+}
+
+.button-outline:hover {
+    background: #f3f4f6;
+}
+
+.button-ghost {
+    background: transparent;
+    color: #374151;
+}
+
+.button-ghost:hover {
+    background: #f3f4f6;
+}
+
+.button-danger {
+    background: #ef4444;
+    color: #fff;
+}
+
+.button-danger:hover {
+    background: #b91c1c;
+}
+
+.button-sm {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.button-md {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.button-lg {
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.button-fullwidth {
+    width: 100%;
+}
+
+.button-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.button-lefticon {
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.button-righticon {
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.button-spinner {
+    animation: button-spin 1s linear infinite;
+    margin-right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    color: currentColor;
+}
+
+.button-spinner-bg {
+    opacity: 0.25;
+}
+
+.button-spinner-fg {
+    opacity: 0.75;
+}
+
+@keyframes button-spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

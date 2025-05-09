@@ -1,0 +1,40 @@
+GNU AFFERO GENERAL PUBLIC LICENSE
+Version 3, 19 November 2007
+
+Copyright (c) 2024 GeoSeeker
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Additional Terms:
+
+1. Commercial Use Prohibition
+   This software may not be used for commercial purposes without explicit written permission from the copyright holder.
+
+2. Attribution Requirement
+   When using this software, you must prominently display the following attribution:
+   "This software uses GeoSeeker, created by [Your Name] (https://github.com/abshrimp/GeoSeeker)"
+   This attribution must be visible in the user interface and included in any documentation.
+
+3. Modification Notice
+   If you modify this software, you must clearly indicate that your version is a modified version of GeoSeeker and include the original copyright notice.
+
+4. Distribution Requirements
+   If you distribute this software or any modified version, you must:
+   a) Include the complete source code
+   b) Maintain all copyright notices
+   c) Include a copy of this license
+   d) Clearly indicate any modifications made
+
+For the complete GNU AGPL-3.0 license text, please visit:
+https://www.gnu.org/licenses/agpl-3.0.html 

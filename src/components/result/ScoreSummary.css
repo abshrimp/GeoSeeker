@@ -1,0 +1,252 @@
+.score-summary {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.score-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.score-metrics {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 24px auto 24px;
+    width: fit-content;
+}
+
+@media (min-width: 685px) {
+    .score-metrics {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .score-summary {
+        margin: 24px;
+    }
+}
+
+.metric {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 685px) {
+    .metric {
+        margin-bottom: 0;
+    }
+}
+
+.metric-icon-container {
+    background-color: #fef3c7;
+    padding: 12px;
+    border-radius: 50%;
+    margin-right: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.group:hover .metric-icon-container.trophy {
+    background-color: #fde68a;
+}
+
+.group:hover .metric-icon-container.map-pin {
+    background-color: #bfdbfe;
+}
+
+.group:hover .metric-icon-container.timer {
+    background-color: #d1fae5;
+}
+
+.trophy-icon2 {
+    width: 32px;
+    height: 32px;
+    color: #f59e0b;
+}
+
+.map-pin-icon2 {
+    width: 32px;
+    height: 32px;
+    color: #3b82f6;
+}
+
+.timer-icon2 {
+    width: 32px;
+    height: 32px;
+    color: #10b981;
+}
+
+.metric-label {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.metric-value {
+    font-weight: 700;
+}
+
+.metric-value.score {
+    font-size: 30px;
+    color: #2563eb;
+}
+
+.metric-value:not(.score) {
+    font-size: 20px;
+}
+
+.rounds-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+@media (min-width: 685px) {
+    .rounds-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.round-card {
+    background-color: #f9fafb;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    /* transform: scale(1); */
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+}
+
+.round-card:hover {
+    /* transform: scale(1.05); */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.round-label {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.round-distance {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.round-time {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+@media (min-width: 685px) {
+    .action-buttons {
+        flex-direction: row;
+        gap: 16px;
+    }
+}
+
+.play-again-button {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.play-again-button:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.share-button {
+    background-color: #fff;
+    color: #1f2937;
+    border: 1px solid #d1d5db;
+    padding: 8px 24px;
+    border-radius: 9999px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.share-button:hover {
+    background-color: #f3f4f6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.share-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.game-settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #dbeafe;
+}
+
+.settings-label {
+    font-size: 14px;
+    color: #4b5563;
+    margin-right: 8px;
+    text-align: center;
+}
+
+.settings-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.settings-tag {
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-size: 12px;
+}
+
+.settings-tag.time {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.settings-tag.enabled {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.settings-tag.disabled {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.share-button-x {
+    background-color: #000000;
+    color: #fff;
+}
+
+.share-button-x:hover {
+    background-color: #1da1f2;
+}

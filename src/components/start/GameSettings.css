@@ -1,0 +1,48 @@
+.gamesettings-root {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.gamesettings-root:hover {
+    background: #f9fafb;
+}
+
+.gamesettings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gamesettings-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.gamesettings-iconwrap {
+    display: flex;
+    align-items: center;
+}
+
+.gamesettings-icon {
+    width: 20px;
+    height: 20px;
+    color: #3b82f6;
+}
+
+.gamesettings-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.gamesettings-value {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2563eb;
+}

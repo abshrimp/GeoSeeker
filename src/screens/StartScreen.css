@@ -1,0 +1,54 @@
+.startscreen-root {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #f3f4f6;
+    user-select: none;
+}
+
+.startscreen-main {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.startscreen-main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .startscreen-main-grid {
+        grid-template-columns: 4fr 3fr;
+    }
+}
+
+.startscreen-main-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.startscreen-main-btnrow {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.startscreen-main-btn {
+    font-size: 1.125rem;
+}
+
+.startscreen-main-btnicon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.startscreen-main-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}

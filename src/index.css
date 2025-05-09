@@ -1,0 +1,32 @@
+@tailwind base;
+
+body {
+    overscroll-behavior: none;
+    touch-action: pan-x pan-y;
+}
+
+:root {
+    --height: 60vh;
+    --width: 50vh;
+    --color1: #6fa24a;
+    --color2: #54802f;
+    --color3: #666666;
+    --color4: #3a3a3a;
+    --color5: #666666;
+    --color6: #3a3a3a;
+
+    --ds-color-white-60: hsla(0, 0%, 100%, .6);
+    --ds-color-white-80: hsla(0, 0%, 100%, .8);
+    --ds-color-white: #fff;
+    --ds-color-red: rgb(252, 125, 125);
+    --ds-color-black-50: rgba(16, 16, 28, .5);
+    --ds-color-black-80: rgba(16, 16, 28, .8);
+    --ds-color-green-60: #6cb928c7;
+    --ds-color-green-80: #6cb928;
+    --ds-color-white-20: hsla(0, 0%, 100%, .2);
+    --font-size-10: 0.625rem;
+
+    --main-color: #8B4513;
+    --main-color-hover: #A52A2A;
+    --main-color-back: rgb(242, 237, 226);
+}

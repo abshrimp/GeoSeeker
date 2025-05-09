@@ -1,0 +1,133 @@
+.compass-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 1rem;
+    width: 100%;
+    z-index: 1000;
+}
+
+.compass {
+    --compass-height: 2rem;
+    width: var(--compass-width);
+    background-color: var(--ds-color-black-50);
+    border-radius: 1rem;
+    padding: 0 .5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.compass-inner {
+    align-items: center;
+    display: flex;
+    height: var(--compass-height);
+    overflow: hidden;
+    justify-content: center;
+}
+
+.latitude-item {
+    flex: 0 0 auto;
+    height: 1rem;
+    user-select: none;
+}
+
+.latitude-lines {
+    background-color: var(--ds-color-white-60);
+    height: 100%;
+    position: absolute;
+    width: .0625rem;
+    z-index: 1;
+}
+
+.latitude-label {
+    color: var(--ds-color-white);
+    display: flex;
+    font-size: var(--font-size-10);
+    font-weight: 700;
+    justify-content: center;
+    transform-origin: center;
+}
+
+.north {
+    text-shadow: 0 0 3px #f00, 0 0 3px #f00, 0 0 3px #f00, 0 0 3px #f00, 0 0 3px #f00, 0 0 3px #f00, 0 0 3px;
+}
+
+.compass-top-indicator {
+    border-color: var(--ds-color-white-60) transparent transparent transparent;
+    border-style: solid;
+    border-width: .3125rem .09375rem 0;
+    position: absolute;
+    top: 0;
+}
+
+.compass-bottom-indicator {
+    border-color: transparent transparent var(--ds-color-white-60) transparent;
+    border-style: solid;
+    border-width: 0 .09375rem .3125rem;
+    position: absolute;
+    top: calc(var(--compass-height) - .3125rem);
+}
+
+.stage-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 4rem;
+    width: calc(47vw - var(--compass-width) / 2);
+    max-width: 10rem;
+    position: absolute;
+    z-index: 1002;
+    background-color: var(--main-color-back);
+    right: 0;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
+    border-radius: 10px 0 0 10px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 3px #8B4513, 0 0 3px #8B4513, 0 0 3px #8B4513, 0 0 3px #8B4513, 0 0 3px #8B4513, 0 0 3px #8B4513, 0 0 3px #8B4513, 0 0 3px #8B4513, 0 0 3px #8B4513, 0 0 3px #8B4513, 0 0 3px #8B4513, 0 0 3px;
+}
+
+.round-contents {
+    text-align: center;
+}
+
+.span-1 {
+    font-size: 1rem;
+}
+
+.span-2 {
+    font-size: .75rem;
+}
+
+.close-btn {
+    cursor: pointer;
+    border-radius: 100px;
+    padding-top: 4px;
+}
+
+@media only screen and (max-width: 679px) {
+    .compass-container {
+        --compass-width: 50vw;
+        top: .3rem;
+    }
+
+    .compass {
+        transform: scale(0.9);
+    }
+
+    .stage-container {
+        height: 2rem;
+        background-color: transparent;
+        box-shadow: none;
+        opacity: .9;
+        top: .2rem;
+    }
+
+    .round-contents {
+        display: none;
+    }
+
+    .close-btn {
+        background-color: var(--ds-color-white-60);
+    }
+}
