@@ -124,14 +124,14 @@ const RouteChangeHandler: React.FC = () => {
 const DevToolsDetector: React.FC = () => {
     useEffect(() => {
         const checkDevTools = () => {
-            const threshold = 160;
-            const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-            const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+            // const threshold = 160;
+            // const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+            // const heightThreshold = window.outerHeight - window.innerHeight > threshold;
             
-            if (widthThreshold || heightThreshold) {
-                document.body.innerHTML = '開発者ツールの使用は禁止されています。';
-                return;
-            }
+            // if (widthThreshold || heightThreshold) {
+            //     document.body.innerHTML = '開発者ツールの使用は禁止されています。';
+            //     return;
+            // }
         };
 
         // debuggerループの設定
