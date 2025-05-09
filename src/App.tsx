@@ -120,48 +120,14 @@ const RouteChangeHandler: React.FC = () => {
     return null;
 };
 
-// 開発者ツールの検出と防止機能
 const DevToolsDetector: React.FC = () => {
     useEffect(() => {
-        // const checkDevTools = () => {
-        //     // const threshold = 160;
-        //     // const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-        //     // const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-            
-        //     // if (widthThreshold || heightThreshold) {
-        //     //     document.body.innerHTML = '開発者ツールの使用は禁止されています。';
-        //     //     return;
-        //     // }
-        // };
-
-        // debuggerループの設定
         const debuggerLoop = () => {
             debugger;
             setTimeout(debuggerLoop, 100);
         };
-
-        // 定期的にチェック
-        //const interval = setInterval(checkDevTools, 1000);
         debuggerLoop();
 
-        // キーボードショートカットの防止
-        const preventDevTools = (e: KeyboardEvent) => {
-            if (
-                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) ||
-                (e.ctrlKey && e.key === 'U') ||
-                (e.key === 'F12')
-            ) {
-                e.preventDefault();
-                return false;
-            }
-        };
-
-        window.addEventListener('keydown', preventDevTools);
-
-        return () => {
-            clearInterval(interval);
-            window.removeEventListener('keydown', preventDevTools);
-        };
     }, []);
 
     return null;

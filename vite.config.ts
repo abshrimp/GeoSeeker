@@ -15,7 +15,7 @@ export default defineConfig({
                 short_name: 'GeoSeeker',
                 description: 'Geography Guessing Game',
                 theme_color: '#ffffff',
-                start_url: '/',
+                start_url: '/game',
                 icons: [
                     {
                         src: 'assets/192_img.png',
