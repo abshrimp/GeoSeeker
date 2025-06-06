@@ -92,7 +92,45 @@ const GameScreen: React.FC = () => {
         setIsLoading(false);
     };
 
+    const startOther = async () => {
+        setIsLoading(true);
+
+        const res = await fetch('/assets/data.json');
+        const data = await res.json();
+        const currentMapData = data[gameState.map_id];
+
+        if (gameState.max_error_distance < 0) {
+            const distance = getDistance(
+                { latitude: currentMapData.edges[1], longitude: currentMapData.edges[0] },
+                { latitude: currentMapData.edges[3], longitude: currentMapData.edges[2] }
+            );
+            setGameState({
+                max_error_distance: distance,
+            });
+        }
+        setEdges(currentMapData.edges);
+
+        let game_type = 0;
+        if (!gameState.allow_move) game_type += 1;
+        if (!gameState.allow_pan) game_type += 10;
+        if (!gameState.allow_zoom) game_type += 100;
+
+        const round = gameState.rounds[gameState.rounds.length - 1];
+        if (round.pano_id) {
+            setStreetViewUrl(`${game_type}&!4v0!6m3!1m2!1s${round.pano_id}!3f${Number(round.heading)}`);
+        } else {
+            const pano = currentMapData.data[Math.floor(Math.random() * currentMapData.data.length)];
+            setStreetViewUrl(`${game_type}&!4v0!6m8!1m7!1s${pano[0]}.!2m2!1d${pano[1]}!2d${pano[2]}!3f0!4f0!5f0`);
+            
+        }
+    }
+
     const start = async () => {
+        if (gameState.map_id >= 500000) {
+            startOther();
+            return;
+        }
+
         setIsLoading(true);
 
         const response = await apiClient.getStreetView(gameState.map_id);

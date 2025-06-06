@@ -3,6 +3,7 @@
     min-height: 100dvh;
     background: #f3f4f6;
     user-select: none;
+    overscroll-behavior: none;
 }
 
 .startscreen-main {
