@@ -133,6 +133,17 @@ const DevToolsDetector: React.FC = () => {
     return null;
 };
 
+const ExpoRedirect: React.FC = () => {
+    useEffect(() => {
+        localStorage.setItem('selectedCity', '関西万博会場');
+        localStorage.setItem('selectedDistrict', '');
+        localStorage.setItem('selectedPrefecture', 'その他のマップ');
+        window.location.href = '/game';
+    }, []);
+
+    return null;
+};
+
 function App() {
     return (
         <GameProvider>
@@ -153,6 +164,12 @@ function App() {
                         <>
                             <SEO />
                             <DailyScreen />
+                        </>
+                    } />
+                    <Route path="/expo" element={
+                        <>
+                            <SEO />
+                            <ExpoRedirect />
                         </>
                     } />
                     <Route path="/favicon.ico" element={null} />
