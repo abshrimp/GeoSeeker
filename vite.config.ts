@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import fs from 'fs';
+import path from 'path';
 
 export default defineConfig({
     base: '/',
@@ -33,5 +35,11 @@ export default defineConfig({
     ],
     optimizeDeps: {
         exclude: ['lucide-react'],
-    }
+    },
+    server: {
+        https: {
+            cert: fs.readFileSync(path.resolve(__dirname, 'localhost.crt')),
+            key: fs.readFileSync(path.resolve(__dirname, 'localhost.key')),
+        },
+    },
 });

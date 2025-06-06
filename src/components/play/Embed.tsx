@@ -19,7 +19,7 @@ const Embed: React.FC<EmbedProps> = ({ inputUrl }) => {
             const pb: string | null = inputUrl.split("&")[1];
             if (!pb) throw new Error("Missing 'pb' parameter");
 
-            const lng: string | undefined = pb.split("d").pop();
+            const lng: string | undefined = pb.includes("2d") ? pb.split("d").pop() : undefined;
             const url = "https://www.google.com/maps/embed?pb=" + pb;
             const game_type = Number(inputUrl.split("&")[0]);
 
@@ -31,6 +31,7 @@ const Embed: React.FC<EmbedProps> = ({ inputUrl }) => {
                     return response.text();
                 })
                 .then((htmlContent: string) => {
+                    htmlContent = htmlContent.replace("<head>", '<head><meta name="referrer" content="no-referrer">')
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(htmlContent, "text/html");
 
@@ -80,7 +81,7 @@ const Embed: React.FC<EmbedProps> = ({ inputUrl }) => {
                     const scripts = doc.querySelectorAll("script");
                     for (let script of scripts) {
                         if (script.textContent) {
-                            script.textContent = script.textContent.replace(`${lng}]`, `${lng}],null,null,1,20,1`);
+                            if (lng) script.textContent = script.textContent.replace(`${lng}]`, `${lng}],null,null,1,20,1`);
                             script.textContent = addScript + script.textContent;
                             script.textContent = script.textContent.replace(link.href, linkbase + link2);
                             break;

@@ -5,6 +5,10 @@ body {
     touch-action: pan-x pan-y;
 }
 
+#root {
+    overscroll-behavior: none;
+}
+
 :root {
     --height: 60vh;
     --width: 50vh;

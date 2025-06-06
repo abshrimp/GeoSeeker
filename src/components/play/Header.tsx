@@ -43,7 +43,7 @@ const Header: React.FC<{ setIsLoading: (isLoading: boolean) => void }> = ({ setI
                     <div className="gamescreen-status-box">
                         <div className="gamescreen-status-item gamescreen-hide">
                             <div className="gamescreen-status-label">Map</div>
-                            <div className="gamescreen-status-value">{gameState.map_name ?? '-'}</div>
+                            <div className="gamescreen-status-value">{gameState.map_name.replace("その他のマップ ", "") ?? '-'}</div>
                         </div>
                         <div className="gamescreen-status-divider gamescreen-hide" />
                         <div className="gamescreen-status-item">

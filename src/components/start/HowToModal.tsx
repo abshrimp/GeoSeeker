@@ -136,10 +136,10 @@ const HowToModal: React.FC<HowToModalProps> = ({ isOpen, onClose }) => {
                             </div>
                             <div className="terms-footer">
                                 <div className="terms-contact">
-                                    <p>Created by <a href="https://x.com/abshrimp3" target="_blank" rel="noopener noreferrer">@ABshrimp3</a></p>
+                                    <p>Created by <a href="https://x.com/s__hrimp" target="_blank" rel="noopener noreferrer">@s__hrimp</a></p>
                                 </div>
                                 <div className="terms-version">
-                                    <p>Version: 2.0.0</p>
+                                    <p>Version: 2.1.0</p>
                                 </div>
                                 <div className="terms-copyright">
                                     <p>© 2024-2025 GeoSeeker All rights reserved.</p>
