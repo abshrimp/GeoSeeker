@@ -120,8 +120,25 @@ const GameScreen: React.FC = () => {
             setStreetViewUrl(`${game_type}&!4v0!6m3!1m2!1s${round.pano_id}!3f${Number(round.heading)}`);
         } else {
             const pano = currentMapData.data[Math.floor(Math.random() * currentMapData.data.length)];
-            setStreetViewUrl(`${game_type}&!4v0!6m8!1m7!1s${pano[0]}.!2m2!1d${pano[1]}!2d${pano[2]}!3f0!4f0!5f0`);
-            
+            //panoのlat,lngがgameState.roundsのいずれかと50m以内なら再び選ぶ
+            let isTooClose = false;
+            for (const round of gameState.rounds) {
+                if (round.correct_lat && round.correct_lng) {
+                    const distance = getDistance(
+                        { latitude: round.correct_lat, longitude: round.correct_lng },
+                        { latitude: pano[1], longitude: pano[2] }
+                    );
+                    if (distance <= 200) {
+                        isTooClose = true;
+                        break;
+                    }
+                }
+            }
+            if (isTooClose) {
+                startOther();
+                return;
+            }
+            setStreetViewUrl(`${game_type}&!4v0!6m8!1m7!1s${pano[0]}.!2m2!1d${pano[1]}!2d${pano[2]}!3f${Math.random()*360}0!4f0!5f0`);
         }
     }
 
