@@ -22,6 +22,7 @@ const GameScreen: React.FC = () => {
     const [streetViewUrl, setStreetViewUrl] = useState<string>("");
     const startExecutedRef = useRef<boolean>(false);
     const [edges, setEdges] = useState<number[]>([]);
+    const [cachedData, setCachedData] = useState<any>(null);
 
     const handleGuess = async () => {
         if (hasGuessedRef.current || panorama == null || gameState.rounds[gameState.rounds.length - 1].pano_id == "") return;
@@ -95,9 +96,15 @@ const GameScreen: React.FC = () => {
     const startOther = async () => {
         setIsLoading(true);
 
-        const res = await fetch('/assets/data.json');
-        const data = await res.json();
-        const currentMapData = data[gameState.map_id];
+        let currentMapData;
+        if (!cachedData) {
+            const res = await fetch('/assets/data.json');
+            const data = await res.json();
+            setCachedData(data);
+            currentMapData = data[gameState.map_id];
+        } else {
+            currentMapData = cachedData[gameState.map_id];
+        }
 
         if (gameState.max_error_distance < 0) {
             const distance = getDistance(
@@ -120,7 +127,6 @@ const GameScreen: React.FC = () => {
             setStreetViewUrl(`${game_type}&!4v0!6m3!1m2!1s${round.pano_id}!3f${Number(round.heading)}`);
         } else {
             const pano = currentMapData.data[Math.floor(Math.random() * currentMapData.data.length)];
-            //panoのlat,lngがgameState.roundsのいずれかと50m以内なら再び選ぶ
             let isTooClose = false;
             for (const round of gameState.rounds) {
                 if (round.correct_lat && round.correct_lng) {

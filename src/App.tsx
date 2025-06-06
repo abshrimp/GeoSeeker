@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { GameProvider, useGame, Round, findMapName } from './context/GameContext';
+import { GameProvider, useGame, Round, findMapName, storage } from './context/GameContext';
 import LoginScreen from './screens/LoginScreen';
 import StartScreen from './screens/StartScreen';
 import GameScreen from './screens/GameScreen';
@@ -135,9 +135,9 @@ const DevToolsDetector: React.FC = () => {
 
 const ExpoRedirect: React.FC = () => {
     useEffect(() => {
-        localStorage.setItem('selectedCity', '関西万博会場');
-        localStorage.setItem('selectedDistrict', '');
-        localStorage.setItem('selectedPrefecture', 'その他のマップ');
+        storage.setItem('selectedCity', '関西万博会場');
+        storage.setItem('selectedDistrict', '');
+        storage.setItem('selectedPrefecture', 'その他のマップ');
         window.location.href = '/game';
     }, []);
 
