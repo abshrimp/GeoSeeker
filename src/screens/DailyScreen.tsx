@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import Loading from "../components/play/Loading2";
-import SEO from "../components/SEO";
 import GameScreen from "./GameScreen";
 import { useGame, storage } from "../context/GameContext";
 import { apiClient } from "../api/client";
@@ -13,6 +12,10 @@ const DailyScreen: React.FC = () => {
     const getDailyRef = useRef<boolean>(false);
 
     useEffect(() => {
+        alert('デイリーは一時的に休止しています。申し訳ありません。');
+        window.location.href = '/';
+        return;
+
         const getDaily = async () => {
             if (getDailyRef.current) return;
             getDailyRef.current = true;

@@ -177,7 +177,7 @@ function App() {
                     <Route path="*" element={
                         <>
                             <SEO />
-                            <Navigate to="/daily" replace />
+                            <Navigate to="/game" replace />
                         </>
                     } />
                 </Routes>
