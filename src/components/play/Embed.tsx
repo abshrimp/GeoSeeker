@@ -64,9 +64,9 @@ const Embed: React.FC<EmbedProps> = ({ inputUrl }) => {
                     addScript += `
                         document.head.appendChild2 = document.head.appendChild;
                         document.head.appendChild = (e) => {
-                            if (String(e.src).includes("AuthenticationService")) {
+                            if (String(e.src).includes("AuthenticationService") || String(e.src).includes("QuotaService")) {
                                 const callback = new URL(e.src).searchParams.get("callback");
-                                e.src = "";
+                                e.removeAttribute("src");
                                 e.textContent = "/**/" + callback + " && " + callback + "([1,null,0,null,null,[1]])";
                             }
                             document.head.appendChild2(e);
